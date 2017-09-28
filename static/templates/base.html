@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>StevooLand - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body class="table-inverse">
+<div class="container-fluid table-inverse">
+
+    <div class="row">
+        <div class="col-2">
+            {% include "left_navigation.html" %}
+        </div>
+        <div class="col-8">
+            {% if user.is_authenticated %}
+                <div class="row">
+                {% for character in user.get_characters %}
+                    <div class="col-4" style="text-align:center">
+                        <div class="row small">
+                            <div class="col-12">
+                                <b>{{ character.name }}</b>(<b>Level:</b> {{character.level }})
+                                <br/>
+                                <b>Mana:</b> {{character.character_mana.remaining_mana}}/{{character.character_mana.max_mana}}
+                                <b>PVP:</b> {{character.character_mana.remaining_pvp_mana}}/{{character.character_mana.max_pvp_mana}}
+                                <br/>
+                                <b>Experience:</b> {{character.experience}}/{{character.experience_needed_next_level}}
+                                <b>HP:</b> {{character.remaining_health}}/{{character.max_health}}
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4">Stregnth:</div>
+                                    <div class="col-4">Dexterity: </div>
+                                    <div class="col-4">Constitution: </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4"><b>{{character.strength }}</b></div>
+                                    <div class="col-4"><b>{{character.dexterity }}</b></div>
+                                    <div class="col-4"><b>{{character.constitution }}</b></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">Intelligence:</div>
+                                    <div class="col-4">Wisdom: </div>
+                                    <div class="col-4">Charisma: </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4"><b>{{character.intelligence }}</b></div>
+                                    <div class="col-4"><b>{{character.wisdom }}</b></div>
+                                    <div class="col-4"><b>{{character.charisma }}</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+             </div>
+
+                {% endif %}
+                <br/><br/>
+                {% block content %}{% endblock %}
+        </div>
+        <div class="col-2">
+            {% include "right_navigation.html" %}
+        </div>
+    </div>
+
+</div>
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

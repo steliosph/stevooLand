@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to StevooLand{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            An old man with a long white bear approached you.<br/>
+            You see this tree son? It's fruits are miraculous, they heal your wounds in seconds and restore your health completely.<br/>
+            But this miracle ... it's not free, you see, even an old druid like me needs something to feed his body with.<br/>
+            <br />
+            If you want fruits enough to restore you it will cost you :
+            {% for q in characters %}
+                <div class="row">
+                    <div class="col">
+                        <b>{{q.0.name}}</b> - (<b>Level:</b> <span class="level">{{q.0.level}}</span>) - <b>HP:</b><span class="hp">{{q.0.remaining_health}}/{{q.0.max_health}}</span> - Gold Cost : <span class="gold">{{q.1}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if not_enough_gold_error %}
+    <div class="row">
+        <div class="col">
+            <span class="error">The old sends you away as you dont have enough gold to heal your warriors. Try earning some gold first !</span>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="row">
+        <div class="col">
+            With a total cost of <span class="gold">{{ total_cost }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-info" href="/city/reviving_fruits/heal_all">Heal All Warriors</a>
+
+        </div>
+    </div>
+
+
+{% endblock content %}

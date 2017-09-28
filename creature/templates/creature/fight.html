@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to StevooLand{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col text-center"><h3><u>Fight Against {{ creature.name }}</u></h3></div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <p>{{ creature.fight_description }}</p>
+        {% for sequence in fight_sequence %}
+        <div class="row">
+            <div class="col-12">
+                {{ sequence|safe }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-12" height="100px">
+        <div class="row">
+            <div class="col-12 text-">
+                <a type="button" class="btn btn-danger" href="{% url 'creature:fight' creature.id %}"> Fight {{ creature.name }} Again </a>
+                 <a type="button" class="btn btn-danger" href="{% url 'creature:fight' creature.id 'heal' %}"> Heal & Fight {{ creature.name }} Again </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

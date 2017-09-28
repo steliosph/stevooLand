@@ -1,0 +1,9 @@
+{% if user.is_authenticated %}
+
+Current Date:<br/>
+{% now "d/m/Y  G:H:i:s" %}
+
+<br/>
+<a href="/logout">LOGOUT</a>
+{% block right-navigation %}{% endblock %}
+{% endif %}

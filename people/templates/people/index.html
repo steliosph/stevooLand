@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block title %}View {{ people.nickname }} Information{% endblock %}
+
+
+{% block content %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+<form action="{% url 'people:index' people.id %}" method="post">
+{% csrf_token %}
+
+    <input type="textfield" name="nickname" id="" value="{{ people.nickname }}" />
+</form>
+{% endblock %}

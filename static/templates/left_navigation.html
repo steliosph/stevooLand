@@ -1,0 +1,37 @@
+{% if user.is_authenticated %}
+
+<div class="row ">
+    <div class="col">
+        <div class="row text-center"><div class="col-12"><u>{{ user.nickname }}</u></div></div>
+        <div class="row small"><div class="col-6" style="text-align:right">ID</div><div class="col-6"> {{ user.id }}</div></div>
+        <div class="row small"><div class="col-6" style="text-align:right">FAME</div><div class="col-6"> {{ user.resources.fame }}</div></div>
+    </div>
+</div>
+<div class="row small">
+     <div class="col">
+         <div class="row "><div class="col-6" style="text-align:right">GOLD :</div><div class="col-6">{{ user.resources.gold}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">FOOD :</div><div class="col-6">{{ user.resources.food}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">WOOD :</div><div class="col-6">{{ user.resources.wood}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">IRON :</div><div class="col-6">{{ user.resources.iron}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">STONE :</div><div class="col-6">{{ user.resources.stone}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">MATERIALS :</div><div class="col-6">{{ user.resources.materials}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">FRAGMENTS :</div><div class="col-6">{{ user.resources.fragments}}</div></div>
+         <div class="row"><div class="col-6" style="text-align:right">GEMSTONES :</div><div class="col-6">{{ user.resources.gemstones}}</div></div>
+     </div>
+</div>
+<br/><br/>
+<div class="row">
+     <div class="col-12">
+         <div class="row"><div class="col">--><a href="/"> My Home</a></div></div>
+         <div class="row"><div class="col">--><a href="/character"> My Heroes</a></div></div>
+         <div class="row"><div class="col">--><a href="/equipment"> My Equipments</a></div></div>
+         <div class="row"><div class="col">--><a href="/send_mail"> Send Mail</a></div></div>
+         <br/>
+         <div class="row"><div class="col">--><a href="/city"> The City</a></div></div>
+         <br/>
+         <div class="row"><div class="col">--><a href="/fighting"> Fighting</a></div></div>
+
+     </div>
+</div>
+{% block left-navigation %}{% endblock %}
+{% endif %}

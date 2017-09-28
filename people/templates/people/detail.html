@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}View {{ people.nickname }} Information{% endblock %}
+{% block content %}
+<h1>{{ people.nickname }}</h1>
+<p>Gender : {{ people.gender }}</p>
+<p> Last Login Date : {{ people.last_login_date }} </p>
+<p> Date Joined : {{ people.date_joined }}</p>
+{% endblock %}

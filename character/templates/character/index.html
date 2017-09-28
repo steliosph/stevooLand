@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to StevooLand{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col text-center"><h3><u>Welcome to StevooLand</u></h3></div>
+</div>
+{% if display_add_character %}
+<div class="row">
+    <div class="col text-center"><a href="character_selection"><u><h5>Add a new character to your party</h5></u></a></div>
+</div>
+{% endif %}
+<div class="row">
+    {% for character in characters %}
+    <div class="col">
+        <div class="card " style="width: 32rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-block table-inverse">
+                <h4 class="card-title text-center"><u>{{ character.name }}</u></h4>
+                <h6 class="card-title text-center">{{ character.find_character_type }}</h6>
+                <p class="card-text">{{ character.find_character.description }}.</p>
+            </div>
+
+            <div class="card-block table-inverse">
+                <div class="row">
+                    <div class="col-3">Level:</div><div class="col-3"><b>{{character.level }}</b></div>
+                    <div class="col-3">Experience:</div><div class="col-3">  <b>{{character.experience }}</b></div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Stregnth:</div><div class="col-3"> <b>{{character.strength }}</b></div>
+                    <div class="col-3">Dexterity:</div><div class="col-3"> <b>{{character.dexterity }}</b></div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Constitution:</div><div class="col-3"> <b>{{character.constitution }}</b></div>
+                    <div class="col-3">Intelligence:</div><div class="col-3"> <b>{{character.intelligence }}</b></div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Wisdom:</div><div class="col-3"> <b>{{character.wisdom }}</b></div>
+                    <div class="col-3">Charisma:</div><div class="col-3"> <b>{{character.charisma}}</b></div>
+                </div>
+            </div>
+            <div class="card-block table-inverse">
+                <div class="row">
+                    <div class="col-3">Mana:</div><div class="col-3"><b>{{character.character_mana.remaining_mana }} / {{character.character_mana.max_mana }}</b></div>
+                    <div class="col-3">PVP Mana:</div><div class="col-3">  <b>{{character.character_mana.remaining_pvp_mana }} / {{character.character_mana.max_pvp_mana }}</b></div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Reloads:</div><div class="col-3">  <b>{{character.character_mana.mana_reloads }}</b></div>
+                </div>
+            </div>
+
+
+            <div class="card-block table-inverse">
+                <a href="#" class="card-link">Extra Details</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

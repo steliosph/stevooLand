@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to StevooLand{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col text-center"><h3><u>Welcome to StevooLand</u></h3></div>
+</div>
+<div class="row">
+    <div class="col text-center">character/character_selection.html</div>
+</div>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+
+    <!--<select id="id_Customers" name="Customer">
+        {% for x,y in form.fields.Customer.choices %}
+        <option value="{{ x }}"{% if form.fields.Customer.value == x %} selected{% endif %}>{{ y }}</option>
+        {% endfor %}
+    </select>-->
+
+    <input type="submit" value="Create new user account" />
+</form>
+
+
+{% endblock %}

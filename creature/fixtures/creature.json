@@ -1,0 +1,128 @@
+[
+  {
+    "model": "creature.creature",
+    "pk": 1,
+    "fields": {
+      "name": "Bug",
+      "type": "Fighter",
+      "health": 30,
+      "strength": 5,
+      "defence": 10,
+      "range_attack": 0,
+      "range_defence": 12,
+      "magic_attack": 0,
+      "magic_defence": 8,
+      "fight_description": "You have approached a rather small bug. Since you though you were all powerful you try to squash it but it fights back. You did not see that coming.",
+      "drop_experience_minimum": 3,
+      "drop_experience_maximum": 5,
+      "drop_gold_minimum": 3,
+      "drop_gold_maximum": 5,
+      "drop_item_rate": "0.00"
+    }
+  },
+  {
+    "model": "creature.creature",
+    "pk": 2,
+    "fields": {
+      "name": "Giant Ant",
+      "type": "Fighter",
+      "health": 50,
+      "strength": 8,
+      "defence": 12,
+      "range_attack": 0,
+      "range_defence": 15,
+      "magic_attack": 0,
+      "magic_defence": 12,
+      "fight_description": "A really big ant",
+      "drop_experience_minimum": 5,
+      "drop_experience_maximum": 7,
+      "drop_gold_minimum": 5,
+      "drop_gold_maximum": 7,
+      "drop_item_rate": "0.01"
+    }
+  },
+  {
+    "model": "creature.creature",
+    "pk": 3,
+    "fields": {
+      "name": "Scorpion",
+      "type": "Fighter",
+      "health": 80,
+      "strength": 11,
+      "defence": 14,
+      "range_attack": 8,
+      "range_defence": 12,
+      "magic_attack": 0,
+      "magic_defence": 14,
+      "fight_description": "Bug with poison",
+      "drop_experience_minimum": 7,
+      "drop_experience_maximum": 9,
+      "drop_gold_minimum": 7,
+      "drop_gold_maximum": 9,
+      "drop_item_rate": "0.01"
+    }
+  },
+  {
+    "model": "creature.creature",
+    "pk": 5,
+    "fields": {
+      "name": "Wasps",
+      "type": "Ranger",
+      "health": 150,
+      "strength": 14,
+      "defence": 22,
+      "range_attack": 20,
+      "range_defence": 22,
+      "magic_attack": 0,
+      "magic_defence": 22,
+      "fight_description": "A wasp",
+      "drop_experience_minimum": 11,
+      "drop_experience_maximum": 13,
+      "drop_gold_minimum": 11,
+      "drop_gold_maximum": 13,
+      "drop_item_rate": "0.01"
+    }
+  },
+  {
+    "model": "creature.creature",
+    "pk": 6,
+    "fields": {
+      "name": "Spider",
+      "type": "Fighter",
+      "health": 100,
+      "strength": 16,
+      "defence": 16,
+      "range_attack": 0,
+      "range_defence": 16,
+      "magic_attack": 0,
+      "magic_defence": 18,
+      "fight_description": "8 Legs, all bug",
+      "drop_experience_minimum": 9,
+      "drop_experience_maximum": 11,
+      "drop_gold_minimum": 9,
+      "drop_gold_maximum": 11,
+      "drop_item_rate": "0.01"
+    }
+  },
+  {
+    "model": "creature.creature",
+    "pk": 7,
+    "fields": {
+      "name": "Bees",
+      "type": "Ranger",
+      "health": 180,
+      "strength": 16,
+      "defence": 24,
+      "range_attack": 24,
+      "range_defence": 20,
+      "magic_attack": 0,
+      "magic_defence": 24,
+      "fight_description": "A bee",
+      "drop_experience_minimum": 13,
+      "drop_experience_maximum": 15,
+      "drop_gold_minimum": 13,
+      "drop_gold_maximum": 15,
+      "drop_item_rate": "0.01"
+    }
+  }
+]

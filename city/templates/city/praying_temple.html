@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to StevooLand - Praying Temple{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <p>
+            <red>sTevoo</red>
+            is your God.
+        </p>
+
+        <p>sTevoo watches over you day and night, and you must please Him.<br/>
+            sTevoo rules the world of sTevooLand, bad luck and good luck are His will.<br/>
+            In this temple, just a small sign of His magnificence, you can try to please Him, fall on your knees and
+            pray,
+            He might reward your prayers.<br/>
+            Since you must concentrate and you need to take your time, each prayer will cost you 1 mana.
+        </p>
+        <br/>
+
+        {% for sequence in praying_sequence %}
+        <div class="row">
+            <div class="col-12">
+                {{ sequence|safe }}
+            </div>
+        </div>
+        {% endfor %}
+        <br/>
+        <br/>
+        <br/>
+        {% for character in user.get_characters %}
+
+
+        <div class="col-12">
+            <div class="row">
+                <b style="text-align:center">{{ character.name }}</b>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    Stregnth: <b>{{character.strength }}</b>
+                    <a type="button" class="btn btn-link" href="{% url 'city:praying_temple' character.id 'strength' %}">Pray</a>
+                </div>
+                <div class="col-4">Dexterity: <b>{{character.dexterity }}</b>
+                    <a type="button" class="btn btn-link" href="{% url 'city:praying_temple' character.id 'dexterity' %}">Pray </a>
+                </div>
+                <div class="col-4">Constitution: <b>{{character.constitution }} </b>
+                    <a type="button" class="btn btn-link" href="{% url 'city:praying_temple' character.id 'constitution' %}">Pray</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">Intelligence: <b>{{character.intelligence }}</b>
+                    <a type="button" class="btn btn-link"
+                       href="{% url 'city:praying_temple' character.id 'intelligence' %}">Pray</a>
+                </div>
+                <div class="col-4">Wisdom: <b>{{character.wisdom }}</b>
+                    <a type="button" class="btn btn-link" href="{% url 'city:praying_temple' character.id 'wisdom' %}">Pray</a>
+                </div>
+                <div class="col-4">Charisma: <b>{{character.charisma }}</b>
+                    <a type="button" class="btn btn-link" href="{% url 'city:praying_temple' character.id 'charisma' %}">Pray</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+</div>
+{% endblock content %}
