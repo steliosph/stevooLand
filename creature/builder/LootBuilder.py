@@ -1,4 +1,4 @@
-from character.builder.ExperienceBuilder import ExperienceBuilder
+from character.builder.experienceBuilder import ExperienceBuilder
 from random import randint
 import decimal
 

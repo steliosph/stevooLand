@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'stevooLand.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'stevooland',
-        'USER': 'stevoolanduser',
+        'NAME': 'stevooland_db',
+        'USER': 'stevooland_user',
         'PASSWORD': 'guru-man-skied',
         'HOST': '127.0.0.1',
     }

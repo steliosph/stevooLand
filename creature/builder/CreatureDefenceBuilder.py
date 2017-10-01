@@ -16,7 +16,7 @@ class CreatureDefenceBuilder:
         base_defence = decimal.Decimal((stat ** 2) / 48)
         base_defence = base_defence + (base_defence * decimal.Decimal(uniform(0.0, 5.0) / 100))
 
-        return decimal.Decimal(round(base_defence, 10))
+        return decimal.Decimal(round(base_defence, 2))
 
     def __calculate_according_to_creature_type(self, creature):
         if creature.type == CREATURE_TYPES[0][0]:  # Fighter

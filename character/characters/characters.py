@@ -9,9 +9,13 @@ CHARACTER_TYPES = [
 ]
 
 
+def ran_dom(start, end):
+    return random.randint(start, end)
+
+
 class AbstractCharacter(object):
     class_id = None
-    character_type = None;
+    character_type = None
     health = None
 
     strength = None
@@ -40,22 +44,17 @@ class AbstractCharacter(object):
         abstract = True
 
 
-class ran():
-    def dom(start, end):
-        return random.randint(start, end)
-
-
 class Paladin(AbstractCharacter):
     class_id = 1
     character_type = 'Fighter'
-    health = ran.dom(40, 50)
+    health = ran_dom(40, 50)
 
-    strength = ran.dom(10, 20)
-    dexterity = ran.dom(10, 20)
-    constitution = ran.dom(10, 20)
-    intelligence = ran.dom(3, 13)
-    wisdom = ran.dom(2, 12)
-    charisma = ran.dom(2, 12)
+    strength = ran_dom(10, 20)
+    dexterity = ran_dom(10, 20)
+    constitution = ran_dom(10, 20)
+    intelligence = ran_dom(3, 13)
+    wisdom = ran_dom(2, 12)
+    charisma = ran_dom(2, 12)
 
     praying_strength = 1
     praying_dexterity = 1.2
@@ -79,14 +78,14 @@ class Paladin(AbstractCharacter):
 class Barbarian(AbstractCharacter):
     class_id = 2
     character_type = 'Fighter'
-    health = ran.dom(45, 55)
+    health = ran_dom(45, 55)
 
-    strength = ran.dom(12, 22)
-    dexterity = ran.dom(10, 20)
-    constitution = ran.dom(10, 20)
-    intelligence = ran.dom(2, 12)
-    wisdom = ran.dom(2, 12)
-    charisma = ran.dom(2, 12)
+    strength = ran_dom(12, 22)
+    dexterity = ran_dom(10, 20)
+    constitution = ran_dom(10, 20)
+    intelligence = ran_dom(2, 12)
+    wisdom = ran_dom(2, 12)
+    charisma = ran_dom(2, 12)
 
     praying_strength = 1.2
     praying_dexterity = 1
@@ -119,15 +118,16 @@ CHARACTER_CLASSES = [
     (Barbarian.class_id, Barbarian),
 ]
 
+
 def find_class(character_class):
-    for class_id, type in CHARACTER_CLASSES:
+    for class_id, types in CHARACTER_CLASSES:
         if character_class == class_id:
-            return type
+            return types
     return None
 
 
 def find_character_type(character_type):
-    for type_id, type in CHARACTER_TYPES:
+    for type_id, types in CHARACTER_TYPES:
         if character_type == type_id:
-            return type
+            return types
     return None

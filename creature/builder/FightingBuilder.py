@@ -5,6 +5,7 @@ from creature.builder.CreatureDefenceBuilder import CreatureDefenceBuilder
 from creature.builder.CreatureOffenceBuilder import CreatureOffenceBuilder
 from creature.builder.LootBuilder import LootBuilder
 from creature.models import Creature
+import decimal
 
 
 class FightingBuilder():
@@ -43,14 +44,14 @@ class FightingBuilder():
                 character_base_damage = CharacterDamageBuilder(character).build()
                 creature_defence = CreatureDefenceBuilder(self.__creature).build()
 
-                damage_dealt = character_base_damage - creature_defence
+                damage_dealt = decimal.Decimal(round(character_base_damage - creature_defence, 2))
                 self.__creature.health -= damage_dealt
 
                 self.__fight_sequence_builder.append(
-                    "{} have strike the {} with her/his {} dealing {} damage".format(character.name,
-                                                                                     self.__creature.name,
-                                                                                     'hands',
-                                                                                     damage_dealt))
+                    "{} have strike the {} with her/his {} dealing <red>{}</red> damage".format(character.name,
+                                                                                                self.__creature.name,
+                                                                                                'hands',
+                                                                                                damage_dealt))
                 if self.__creature.health > 0:
                     self.__fight_sequence_builder.append(
                         "The {} is still alive with {} health remaining.".format(self.__creature.name,
@@ -59,7 +60,8 @@ class FightingBuilder():
                 else:
                     self.__fight_sequence_builder.append(
                         "You last strike was deadly. You have taken down the {}.".format(self.__creature.name))
-                    LootBuilder(self.__characters, self.__creature, self.__people, self.__fight_sequence_builder).build()
+                    LootBuilder(self.__characters, self.__creature, self.__people,
+                                self.__fight_sequence_builder).build()
                     # We return as we reset the creatures and the health is restored.
                     return
 

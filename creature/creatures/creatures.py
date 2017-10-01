@@ -1,5 +1,6 @@
 from creature.creatures.creature_position import CREATURE_POSITION_CHOICES
 
+
 class AbstractCreature(object):
     creature_id = None
     name = None
@@ -22,6 +23,7 @@ CREATURE_TYPES = [
     ('Magician', 'The Magician Class'),
     ('Ranger', 'The Ranger Class'),
 ]
+
 
 class Bug(AbstractCreature):
     creature_id = 1

@@ -2,6 +2,7 @@ from django.db import models
 from creature.creatures.creatures import CREATURE_TYPES
 from creature.creatures.creature_position import CREATURE_POSITION_CHOICES
 
+
 # Create your models here.
 class Creature(models.Model):
     name = models.CharField(max_length=150)

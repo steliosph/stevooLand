@@ -13,7 +13,6 @@ def index(request):
     return render(request, 'home/index.html')
 
 
-
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)

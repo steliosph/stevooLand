@@ -1,7 +1,7 @@
 from django.db import models
 from character.characters import characters
 from character import managers
-from character.builder.ExperienceBuilder import ExperienceBuilder
+from character.builder.experienceBuilder import ExperienceBuilder
 from character.characters.characters import find_class
 from character.characters.characters import find_character_type
 
@@ -21,7 +21,6 @@ class CharacterMana(models.Model):
         return "Mana (%d/%d) - PVP (%d/%d) - Reload %d" % (
             self.remaining_mana, self.max_mana,
             self.max_pvp_mana, self.remaining_pvp_mana, self.mana_reloads)
-
 
 
 class CharacterStatistic(models.Model):
@@ -75,5 +74,5 @@ class Character(models.Model):
 
     def __str__(self):
         return "%s - %s - %s - %s %s/%s" % (
-        str(self.id), self.people.nickname, str(self.name), str(self.character_class), str(self.remaining_health),
-        str(self.max_health))
+            str(self.id), self.people.nickname, str(self.name), str(self.character_class), str(self.remaining_health),
+            str(self.max_health))
